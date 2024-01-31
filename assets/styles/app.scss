@@ -1,14 +1,14 @@
 :root {
   --color-one: #03cc7f;
-  --color-two: #f8f7ea;
-  --color-four: #efcf91;
+  --color-two: white;
+  --color-four: #f5e6ca;
 }
 
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'lato', sans-serif;
+  font-family: 'Jura', sans-serif;
   background-color: var(--color-four);
   color: black;
 }
@@ -20,23 +20,6 @@ body {
   align-items: center;
   height: 80px;
 }
-/*
-.links {
-  color: var(--color-one);
-  display: flex;
-  font-weight: 600;
-  margin-top: 10px;
-  margin-right: 15px;
-  border-radius: 10px;
-}
-
-.links a {
-  color: var(--color-one);
-  text-decoration: none;
-  padding: 8px;
-}
-*/
-
 
 .menu-icon {
   cursor: pointer;
@@ -55,7 +38,7 @@ body {
 }
 
 .links a {
-  color: var(--color-one);
+  color: black;
   background-color: var(--color-two);
   text-decoration: none;
   padding: 8px;
@@ -65,9 +48,8 @@ body {
   color: #3f75c8e0;
 }
 .links>a:hover {
-  color: var(--color-two-hover);
+  color: black;
 }
-
 
 @media only screen and (max-width: 850px) {
   .menu-icon {
