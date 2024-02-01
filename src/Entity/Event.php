@@ -31,10 +31,10 @@ class Event
     #[ORM\Column(length: 100)]
     private ?string $location = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(type: Types::TEXT)]
     private ?string $Logistic = null;
 
     #[ORM\ManyToOne(inversedBy: 'events')]
