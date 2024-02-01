@@ -1,0 +1,43 @@
+.index {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.content-event{
+  font-family: 'Jura', sans-serif;
+}
+
+.tevent {
+  display: flex;
+  background-color: #03cc7f69;
+  padding: 0rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  justify-content: space-around;
+  font-family: 'Jura', sans-serif;
+}
+
+.eventdetails{
+  margin-left: 6rem;
+}
+.bloc-event {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  width: 87%;
+  margin: auto;
+  height : 12rem;
+  margin-top: 45px;
+  border-radius: 20px;
+  border-color: rgba(9, 6, 6, 0.34);
+  padding-left: 1rem;
+  margin-bottom: 45px;
+}
+
+.bloc-event > h2{
+color: #03cc7f;
+}
+
+.form-even{
+  padding: px;
+}

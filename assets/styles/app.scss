@@ -1,14 +1,14 @@
 :root {
   --color-one: #03cc7f;
   --color-two: white;
-  --color-four: #f5e6ca;
+  --color-four: #f8ecd5;
 }
 
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Jura', sans-serif;
+  font-family: 'Jura';
   background-color: var(--color-four);
   color: black;
 }
@@ -16,9 +16,14 @@ body {
 .navbar {
   background-color: var(--color-two);
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-  height: 80px;
+  font-size: larger;
+  border-bottom: ridge;
+}
+
+.h1{
+  align-items: center;
 }
 
 .menu-icon {
@@ -26,6 +31,12 @@ body {
   display: none;
   flex-direction: column;
   padding-left: 15px;
+}
+.logo {
+  color : var(--color-one);
+  font-size: 34px;
+  margin-inline-end: auto;
+  text-shadow: 1px 1px 0px rgb(46 64 235 / 88%);
 }
 
 

@@ -6,14 +6,20 @@
         <span></span>
     </div>
 
-
-
+    <div class="logo">
+        <a>ConnectEvent </a>
+    </div>
 
     <div class="links" id="links">
-
-            <a style="color: var(--color-one); font-size: larger">ConnectEvent </a>
-            <a class="nav-link" href="/register">Inscription</a>
+        {% if app.user %}
+            <a href="{{ path('app_event_index') }}">Parcourir les évènements</a>
+            <a href="{{ path('app_event_new') }}">Créer un évènements</a>
             <a href="{{ path('app_logout') }}"> Déconnexion</a>
+        {% else %}
+            <a href="{{ path('app_event_index') }}">Parcourir les évènements</a>
+            <a href="/register">Inscription</a>
             <a href="{{ path('app_login') }}"> Connexion </a>
+        {% endif %}
+
     </div>
 </div>
