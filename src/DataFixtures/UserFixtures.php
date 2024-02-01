@@ -27,11 +27,10 @@ class UserFixtures extends Fixture
         $contributor->setLastname('Judfruit');
         $contributor->setBirthday(new \DateTime('12/29/1991'));
         $contributor->setEmail('marion@connectevent.com');
-        $contributor->setCountry('Bordeaux');
+        $contributor->setCity('Bordeaux');
         $contributor->setCar(true);
         $contributor->setHandicap(false);
         $contributor->setPresentation('Bonjour à tous ! ');
-        $contributor->setActivities('Sportive');
         $contributor->setPassword('Marionade');
 
 

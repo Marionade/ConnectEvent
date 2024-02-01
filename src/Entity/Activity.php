@@ -21,9 +21,13 @@ class Activity
     #[ORM\ManyToMany(targetEntity: Event::class, inversedBy: 'activities')]
     private Collection $Event;
 
+    #[ORM\ManyToMany(targetEntity: User::class, mappedBy: 'activities')]
+    private Collection $users;
+
     public function __construct()
     {
         $this->Event = new ArrayCollection();
+        $this->users = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -63,6 +67,33 @@ class Activity
     public function removeEvent(Event $event): static
     {
         $this->Event->removeElement($event);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, User>
+     */
+    public function getUsers(): Collection
+    {
+        return $this->users;
+    }
+
+    public function addUser(User $user): static
+    {
+        if (!$this->users->contains($user)) {
+            $this->users->add($user);
+            $user->addActivity($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUser(User $user): static
+    {
+        if ($this->users->removeElement($user)) {
+            $user->removeActivity($this);
+        }
 
         return $this;
     }

@@ -43,6 +43,9 @@ class Event
     #[ORM\ManyToMany(targetEntity: Activity::class, mappedBy: 'Event')]
     private Collection $activities;
 
+    #[ORM\ManyToOne(inversedBy: 'event')]
+    private ?User $users = null;
+
     public function __construct()
     {
         $this->activities = new ArrayCollection();
@@ -172,6 +175,18 @@ class Event
         if ($this->activities->removeElement($activity)) {
             $activity->removeEvent($this);
         }
+
+        return $this;
+    }
+
+    public function getUsers(): ?User
+    {
+        return $this->users;
+    }
+
+    public function setUsers(?User $users): static
+    {
+        $this->users = $users;
 
         return $this;
     }
