@@ -17,14 +17,13 @@
         <tbody>
         {% for event in events %}
             <tr>
-                <h2>{{ event.title }}</h2>
-                <td>{{ event.duration }}  </td>
-                <td> : Départ {{ event.startDate ? event.startDate|date('d/m/y') : '' }}</td>
-                <td> à {{ event.location }} ---></td>
-                <td>
+                <h2> - {{ event.title }}</h2>
+                <p>{{ event.duration }}  </p>
+                <p>Départ {{ event.startDate ? event.startDate|date('d/m/y') : '' }} à {{ event.location }}</p>
+                <p>
                     <a href="{{ path('app_event_show', {'id': event.id}) }}"> VOIR</a>
                     <a href="{{ path('app_event_edit', {'id': event.id}) }}">/ modifier</a>
-                </td>
+                </p>
             </tr>
         {% else %}
             <tr>
@@ -34,5 +33,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_event_new') }}">Create new</a>
+    <button href="{{ path('app_event_new') }}">Create new</button>
 {% endblock %}

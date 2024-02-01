@@ -16,8 +16,6 @@ class UserType extends AbstractType
     {
         $builder
             ->add('email')
-            ->add('roles')
-            ->add('password')
             ->add('name')
             ->add('lastname')
             ->add('birthday')
@@ -33,7 +31,7 @@ class UserType extends AbstractType
             ])
             ->add('activities', EntityType::class, [
                 'class' => Activity::class,
-                'choice_label' => 'id',
+                'choice_label' => 'type',
                 'multiple' => true,
             ])
         ;

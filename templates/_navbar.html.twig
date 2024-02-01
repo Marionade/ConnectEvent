@@ -14,7 +14,7 @@
         {% if app.user %}
             <a href="{{ path('app_event_index') }}">Parcourir les évènements</a>
             <a href="{{ path('app_event_new') }}">Créer un évènements</a>
-            <a href="{{ path('app_profil_show', {id:user.id}) }}">Mon Profil</a>
+            <a href="{{ path('app_profil_show', {id:app.user.id}) }}">Mon Profil</a>
             <a href="{{ path('app_logout') }}"> Déconnexion</a>
         {% else %}
             <a href="{{ path('app_event_index') }}">Parcourir les évènements</a>
