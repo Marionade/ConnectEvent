@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil{% endblock %}
+
+{% block body %}
+
+    <div class = tprofil>
+    <h1>{{ user.name }} {{ user.lastname }} </h1>
+    </div>
+
+    <table class="tab-profil">
+        <tbody>
+            <tr>
+                <th>Email</th>
+                <td>{{ user.email }}</td>
+            </tr>
+
+            <tr>
+                <th>Prénom</th>
+                <td>{{ user.name }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ user.lastname }}</td>
+            </tr>
+            <tr>
+                <th>Date d'anniversaire</th>
+                <td>{{ user.birthday ? user.birthday|date('d-m-y') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ user.city }}</td>
+            </tr>
+            <tr>
+                <th>Véhicule</th>
+                <td>{{ user.car ? 'Oui' : 'Non' }}</td>
+            </tr>
+            <tr>
+                <th>Handicap</th>
+                <td>{{ user.handicap ? 'Oui' : 'Non' }}</td>
+            </tr>
+
+            <div class="bloc-event">
+                <h2>A propos de moi</h2>
+                <p>{{ user.presentation }}</p>
+            </div>
+
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_profil_index') }}">back to list</a>
+
+    <button href="{{ path('app_profil_edit', {'id': user.id}) }}">Modifier</button>
+
+    {{ include('profil/_delete_form.html.twig') }}
+{% endblock %}

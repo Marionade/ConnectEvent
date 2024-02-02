@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Event{% endblock %}
+
+{% block body %}
+    <style>
+        .content {
+            margin: auto;
+            width: 80%;
+        }
+
+        .panelText {
+            background-color: white;
+            font-size: 1.2rem;
+            font-family: 'Jura', sans-serif;
+        }
+    </style>
+    <div class= "tevent">
+    <h1>{{ event.title }}</h1>
+     <h3> Organisateur : {{ event.user.name }} </h3>
+    </div>
+<div class="content-event">
+        <div class="eventdetails">
+        <div style="display: flex">
+            <h3>Situé à {{ event.location }}</h3>
+        </div>
+        <div>
+            Durant {{ event.duration }}
+            , du {{ event.startDate ? event.startDate|date('d-m-y') : '' }}
+            au {{ event.endDate ? event.endDate|date('d-m-y') : '' }}
+        </div>
+    </div>
+
+        <div class="bloc-event">
+            <h2>Description</h2>
+            <p>{{ event.description }}</p>
+        </div>
+        <div class="bloc-event">
+            <h2>Logistique</h2>
+            <p>{{ event.Logistic }}</p>
+        </div>
+
+{#    <table class="show-event">#}
+{#        <tbody>#}
+
+{#            <tr>#}
+{#                <th>Durée :</th>#}
+{#                <td>{{ event.duration }}</td>#}
+{#            </tr>#}
+{#            <tr>#}
+{#                <th>Début : </th>#}
+{#                <td>{{ event.startDate ? event.startDate|date('d-m-y') : '' }}</td>#}
+{#            </tr>#}
+{#            <tr>#}
+{#                <th>Fin : </th>#}
+{#                <td>Fin : {{ event.endDate ? event.endDate|date('d-m-y') : '' }}</td>#}
+{#            </tr>#}
+{#            <tr>#}
+{#                <th>Lieu :</th>#}
+{#                <td>{{ event.location }}</td>#}
+{#            </tr>#}
+{#            <tr>#}
+{#                <th>Description :</th>#}
+{#                <td class="event-description">{{ event.description }}</td>#}
+{#            </tr>#}
+{#            <tr>#}
+{#                <th>Logistique :</th>#}
+{#                <td>{{ event.Logistic }}</td>#}
+{#            </tr>#}
+{#        </tbody>#}
+{#    </table>#}
+<div>
+    <a href="{{ path('app_event_index') }}">back to list</a>
+
+    <a href="{{ path('app_event_edit', {'id': event.id}) }}">edit</a>
+</div>
+    {{ include('event/_delete_form.html.twig') }}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+<div class="navbar" id="navbar">
+
+    <div class="menu-icon" id="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="logo">
+        <a>ConnectEvent </a>
+    </div>
+
+    <div class="links" id="links">
+        {% if app.user %}
+            <a href="{{ path('app_event_index') }}">Parcourir les évènements</a>
+            <a href="{{ path('app_event_new') }}">Créer un évènements</a>
+            <a href="{{ path('app_profil_show', {id:app.user.id}) }}">Mon Profil</a>
+            <a href="{{ path('app_logout') }}"> Déconnexion</a>
+        {% else %}
+            <a href="{{ path('app_event_index') }}">Parcourir les évènements</a>
+            <a href="/register">Inscription</a>
+            <a href="{{ path('app_login') }}"> Connexion </a>
+        {% endif %}
+
+    </div>
+</div>
